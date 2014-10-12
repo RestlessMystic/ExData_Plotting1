@@ -4,6 +4,7 @@ source("DataFetch.R")
 
 # Plotting
 
-png("plot1.png")        # filename
-hist(data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+png("plot2.png")        # filename
+X <- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
+plot(X, data$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()
